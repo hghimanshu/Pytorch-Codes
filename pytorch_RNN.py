@@ -15,6 +15,8 @@ import torch.nn.functional as F
 import torch.optim as optim
 #import gym
 
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+print(device)
 
 
 class Sequence(nn.Module):
@@ -41,6 +43,8 @@ class Sequence(nn.Module):
 
 
 seq = Sequence()
+seq.to(device)
+seq=seq.cuda()
 criterion = nn.MSELoss()
 optimizer = optim.Adam(seq.parameters(), lr=0.001)
 
@@ -53,8 +57,8 @@ for i in range(1000):
     if i%100==0:
         seq.p = min(seq.p+0.1,0.8)
     optimizer.zero_grad()
-    lstm_out,_ = seq(X)
-    loss = criterion(lstm_out[20:].view(-1),y[20:])
+    lstm_out,_ = seq(X.to(device),None)
+    loss = criterion(lstm_out[20:].view(-1),y[20:].to(device))
     loss.backward()
     optimizer.step()
     if i%10 == 0:
