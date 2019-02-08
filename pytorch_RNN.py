@@ -65,6 +65,9 @@ for i in range(1000):
         print("i::"+str(i)+' loss::'+str(loss.data.item()))
         
 
+
+        
+
 #        
 #        
 #input = Variable(torch.randn(5,3,1))
