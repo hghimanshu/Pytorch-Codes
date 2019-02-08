@@ -18,7 +18,7 @@ import torch.optim as optim
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 print(device)
 
-
+#LSTM pytorch example
 class Sequence(nn.Module):
     def __init__(self):
         super(Sequence,self).__init__()
