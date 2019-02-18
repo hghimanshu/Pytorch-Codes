@@ -1,11 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Feb  6 17:03:58 2019
-
-@author: techject
-"""
-
 from matplotlib import pyplot as plt
 import numpy as np
 import torch
