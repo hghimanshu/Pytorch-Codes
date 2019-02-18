@@ -1,11 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Feb  7 15:43:30 2019
-
-@author: techject
-"""
-
 import torch
 import torch.nn as nn
 from torch.autograd import Variable
